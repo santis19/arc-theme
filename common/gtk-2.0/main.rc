@@ -2216,18 +2216,22 @@ style "xfwm-tabwin" {
   Xfwm4TabwinWidget::alpha = 1.0
   Xfwm4TabwinWidget::border-radius = 2
 
-	bg[NORMAL] = @bg_color
-	bg[SELECTED] = @bg_color
+	bg[NORMAL] = @dark_sidebar_bg
+	bg[SELECTED] = @dark_sidebar_bg
+  bg[ACTIVE] = @dark_sidebar_bg
 
-	fg[NORMAL] = @fg_color
+	fg[NORMAL] = @base_color
+  fg[PRELIGHT] = @base_color
+  fg[ACTIVE] = @base_color
 
   engine "murrine" {
-    contrast = 0.7
+    roundness = 10
+    contrast = 1.0
     glazestyle = 0
     glowstyle = 0
     highlight_shade = 1.0
     gradient_shades = {1.0,1.0,1.0,1.0}
-    border_shades = { 0.8, 0.8 }
+    border_shades = { 1.0, 1.0 }
   }
 }
 
@@ -2235,6 +2239,8 @@ style "xfwm-tabwin-button" {
 
   font_name = "bold"
   bg[SELECTED] = @selected_bg_color
+  bg[ACTIVE]  = @selected_bg_color
+  bg[PRELIGHT] = @tooltip_bg_color
 }
 
 # Chromium
